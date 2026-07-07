@@ -1,0 +1,24 @@
+# Flutter/Dart
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+build/
+pubspec.lock
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# macOS
+.DS_Store
+
+# iOS
+ios/.symlinks/
+ios/Pods/
+ios/Runner.xcworkspace/xcuserdata/
+
+# Android
+android/.gradle/
+android/local.properties
+android/captures/
