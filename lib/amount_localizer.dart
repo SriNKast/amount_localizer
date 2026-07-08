@@ -4,4 +4,3 @@ library;
 
 export 'src/amount_input_locale.dart';
 export 'src/amount_localizer.dart';
-export 'src/device_region_service.dart';

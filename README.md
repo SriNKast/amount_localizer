@@ -16,10 +16,8 @@ gap so amount fields format and parse against the correct locale.
   (`1,234.56` / `1.234,56` / `1 234,56` / Indian lakhs / …), with country and
   `Locale` resolvers.
 - **`AmountLocalizer`** — cached `intl`-backed formatter with sensible banking
-  defaults and a `.localizedAmount` extension on `Object`.
-- **`DeviceRegionService`** — one call at app startup that reads the device
-  region over a method channel and applies it to
-  `AmountInputLocale.regionOverride`.
+  defaults and a `.localizedAmount` extension on `Object`. Also owns the
+  one-shot native bridge via [`AmountLocalizer.ensureInitialized`].
 
 ## Setup
 
@@ -27,7 +25,7 @@ Add the dependency:
 
 ```yaml
 dependencies:
-  amount_localizer: ^1.0.0
+  amount_localizer: ^2.0.0
 ```
 
 Or:
@@ -41,8 +39,11 @@ Initialize once, early in `main()` (before `runApp`):
 ```dart
 import 'package:amount_localizer/amount_localizer.dart';
 
-await DeviceRegionService.initializeAndApply();
+await AmountLocalizer.ensureInitialized();
 ```
+
+Idempotent and best-effort — any native failure is swallowed and the
+plugin falls back to Flutter's language locale. Never throws.
 
 ## Formatting
 

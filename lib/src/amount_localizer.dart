@@ -1,6 +1,9 @@
+import 'package:flutter/foundation.dart';
+import 'package:flutter/services.dart';
 import 'package:intl/intl.dart';
 
 import 'amount_input_locale.dart';
+import 'region_bridge.dart';
 
 /// Locale-aware amount formatter for banking-style monetary values.
 ///
@@ -42,6 +45,29 @@ class AmountLocalizer {
   /// otherwise fails to format. Defaults to the em-dash placeholder used in
   /// finance UIs. Override at app boot to change app-wide behaviour.
   static String fallback = '—';
+
+  /// Prepares the plugin for use.
+  ///
+  /// Reads the device's Region setting (iOS) / FORMAT locale country
+  /// (Android) via a native `MethodChannel` and applies it as
+  /// [AmountInputLocale.regionOverride], so subsequent [format] /
+  /// [tryFormat] / `.localizedAmount` calls resolve against the same
+  /// locale the numeric keyboard uses.
+  ///
+  /// Call once, early in `main()`, **before** `runApp`. Idempotent and
+  /// best-effort — any native failure is swallowed and the plugin falls
+  /// back to Flutter's language locale. Never throws; safe to call from
+  /// any zone.
+  ///
+  /// Returns the resolved ISO 3166-1 alpha-2 country code, or `null` if
+  /// the platform did not provide one.
+  static Future<String?> ensureInitialized() => RegionBridge.readAndApply();
+
+  /// The `MethodChannel` used to talk to the native side. Exposed for
+  /// tests via `TestDefaultBinaryMessengerBinding`; not part of the
+  /// stable public API.
+  @visibleForTesting
+  static MethodChannel get debugChannel => RegionBridge.channel;
 
   /// Default formatting locale. Sourced from [AmountInputLocale.fromPlatform]
   /// so it honours the app-supplied device Region override.
