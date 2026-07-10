@@ -120,6 +120,10 @@ enum AmountInputLocale {
     'KN': commaGroupDotDecimal,
     'AG': commaGroupDotDecimal,
     'GD': commaGroupDotDecimal,
+    // Dutch Caribbean — USD or ANG (USD-pegged); financial UIs use US format.
+    'BQ': commaGroupDotDecimal,
+    'CW': commaGroupDotDecimal,
+    'SX': commaGroupDotDecimal,
     // South America (dot-decimal)
     'PE': commaGroupDotDecimal,
     'GY': commaGroupDotDecimal,
@@ -148,6 +152,10 @@ enum AmountInputLocale {
     'PW': commaGroupDotDecimal,
     'NU': commaGroupDotDecimal,
     'CK': commaGroupDotDecimal,
+    'TK': commaGroupDotDecimal,
+    'AS': commaGroupDotDecimal,
+    'GU': commaGroupDotDecimal,
+    'MP': commaGroupDotDecimal,
     // East & Southeast Asia (dot-decimal)
     'JP': commaGroupDotDecimal,
     'KR': commaGroupDotDecimal,
@@ -214,6 +222,8 @@ enum AmountInputLocale {
     'SH': commaGroupDotDecimal,
     'PN': commaGroupDotDecimal,
     'IO': commaGroupDotDecimal,
+    'AQ': commaGroupDotDecimal,
+    'HM': commaGroupDotDecimal,
 
     // ---------- dotGroupCommaDecimal — 1.234,56 ----------
     // Germanic / Iberian / Italian Europe
@@ -230,6 +240,7 @@ enum AmountInputLocale {
     'DK': dotGroupCommaDecimal,
     'IS': dotGroupCommaDecimal,
     'FO': dotGroupCommaDecimal,
+    'GL': dotGroupCommaDecimal,
     'AD': dotGroupCommaDecimal,
     'SM': dotGroupCommaDecimal,
     'VA': dotGroupCommaDecimal,
@@ -260,15 +271,30 @@ enum AmountInputLocale {
     'TL': dotGroupCommaDecimal,
     // Caucasus / Central Asia (dot-comma per CLDR)
     'AZ': dotGroupCommaDecimal,
+    // Dutch Caribbean (nl_AW)
+    'AW': dotGroupCommaDecimal,
 
     // ---------- spaceGroupCommaDecimal — 1 234,56 ----------
     // French / Romance Europe
     'FR': spaceGroupCommaDecimal,
     'MC': spaceGroupCommaDecimal,
+    // French overseas collectivities & territories
+    'GF': spaceGroupCommaDecimal,
+    'MF': spaceGroupCommaDecimal,
+    'BL': spaceGroupCommaDecimal,
+    'PM': spaceGroupCommaDecimal,
+    'RE': spaceGroupCommaDecimal,
+    'YT': spaceGroupCommaDecimal,
+    'NC': spaceGroupCommaDecimal,
+    'PF': spaceGroupCommaDecimal,
+    'WF': spaceGroupCommaDecimal,
+    'TF': spaceGroupCommaDecimal,
     // Nordic (space grouping)
     'SE': spaceGroupCommaDecimal,
     'FI': spaceGroupCommaDecimal,
+    'AX': spaceGroupCommaDecimal,
     'NO': spaceGroupCommaDecimal,
+    'BV': spaceGroupCommaDecimal,
     // Slavic Europe
     'RU': spaceGroupCommaDecimal,
     'PL': spaceGroupCommaDecimal,

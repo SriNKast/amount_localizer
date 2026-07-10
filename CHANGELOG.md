@@ -1,3 +1,18 @@
+## 2.0.1
+
+**Additive**
+
+- Expand `AmountInputLocale._byCountry` coverage. No API changes; countries
+  previously falling back to `commaGroupDotDecimal` now resolve to their
+  CLDR-appropriate format:
+  - **commaGroupDotDecimal:** `BQ`, `CW`, `SX` (Dutch Caribbean, USD in
+    practice); `TK`, `AS`, `GU`, `MP` (Oceania US-influenced); `AQ`, `HM`
+    (uninhabited, neutral default).
+  - **dotGroupCommaDecimal:** `AW` (Aruba, nl); `GL` (Greenland, da/kl).
+  - **spaceGroupCommaDecimal:** `GF`, `MF`, `BL`, `PM`, `RE`, `YT`, `NC`,
+    `PF`, `WF`, `TF` (French overseas); `AX` (Åland, sv/fi); `BV` (Bouvet,
+    Norwegian territory).
+
 ## 2.0.0
 
 **Breaking changes**
