@@ -25,7 +25,7 @@ Add the dependency:
 
 ```yaml
 dependencies:
-  amount_localizer: ^2.0.0
+  amount_localizer: ^2.0.1
 ```
 
 Or:
